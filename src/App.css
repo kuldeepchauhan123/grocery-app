@@ -7,3 +7,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+body{
+  overflow-x: hidden;
+}
+.container-fluid{
+  padding-left: 30px;
+  padding-right: 30px;
+}

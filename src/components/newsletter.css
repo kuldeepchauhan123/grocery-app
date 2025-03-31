@@ -1,0 +1,27 @@
+.newsletter {    
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    max-width: fit-content;
+    gap: 10px;
+    background-color: #fff;
+}
+.newsletter svg{
+    font-size: 30px;
+    margin-left: 10px;
+}
+.newsletter input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 15px 10px;
+}
+.newsletter button{
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50px;
+    border: none;
+    padding: 15px 20px;
+    display: inline-block;
+    font-weight: 500;
+}

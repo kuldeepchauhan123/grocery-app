@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <>
       <div className="border">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row align-items-center justify-space-between position-relative">
             <div className="col-lg-3">
               <div>

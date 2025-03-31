@@ -1,0 +1,66 @@
+.banner-slider{
+    position: relative;
+}
+.banner-slider .slider-item{
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+}
+.banner-slider .slider-content{
+    position: absolute;
+    top: 15%;
+    left: 6%; 
+    width: calc(50% - 6%);  
+}
+.banner-slider .slider-content h2{
+    font-size: 4rem;
+    font-weight: 700;
+    color: #0e5031;
+}
+.banner-slider .slider-content p{
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    opacity: 0.6;
+    font-weight: 500;
+    margin-top: 1.5rem;
+}
+.banner-slider .slick-dots li button:before,
+.banner-slider .slick-dots li button:after{
+    font-size: 15px;
+    color: transparent;
+    border : 2px solid var(--primary-color);
+    border-radius: 50%;
+}
+
+.banner-slider .slick-dots li.slick-active button:before,
+.banner-slider .slick-dots li.slick-active button:after{
+    color: var(--primary-color);
+}
+.banner-slider .slick-dots{
+    bottom: 25px;
+}
+.banner-slider .slick-prev {
+    left: 25px;
+    z-index: 9;
+}
+.banner-slider .slick-next{
+    right: 25px;
+}
+.banner-slider .slick-prev, .slick-next {
+    width: 40px;
+    height: 40px;    
+    border-radius: 50%;
+    padding-top: 3px;
+}
+.banner-slider .slick-prev:hover, .slick-next:hover{
+    background: var(--primary-color);
+}
+.banner-slider .slick-prev:before, .slick-next:before{
+    font-size: 40px;
+}
+.news-wrapper {
+    position: absolute;
+    bottom: 15%;
+    left: 7%;
+    max-width: fit-content;
+}
