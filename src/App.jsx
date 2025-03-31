@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import BannerSlider from "./components/BannerSlider";
+import FeaturedCategories from "./components/FeaturedCategories";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         </Routes>
         <Navbar/>
         <BannerSlider/>
+        <FeaturedCategories/>
       </BrowserRouter>
     </>
   );

@@ -1,0 +1,29 @@
+.cat-wrapper {
+    text-align: center;
+    background-color: transparent;
+    max-width: fit-content;
+    border-radius: 10px;
+    padding: 0px 10px 15px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    min-width: 140px;
+    overflow: hidden;
+    margin: 5px;
+}
+.cat-wrapper:hover{
+    transform: translateY(-3px);
+}
+
+.cat-img img{
+    width: 100px;
+    margin: auto;
+}
+.cat-title{
+    font-weight: 600;
+}
+.cat-wrapper:hover .cat-title{
+    color: var(--primary-color);
+}
+.cat-quantity{
+    font-size: 14px;
+}

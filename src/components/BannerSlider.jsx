@@ -20,7 +20,7 @@ const BannerSlider = () => {
   };
   return (
     <>
-      <div className="container-fluid mt-4 banner-slider">
+      <div className="container-fluid mt-4" id="banner-slider">
         <div className="row">
           <Slider {...settings}>
             <div className="slider-item">
