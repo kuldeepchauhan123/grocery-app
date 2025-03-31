@@ -1,0 +1,47 @@
+.featProduct{
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+}
+.featProduct img{
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}
+.featProductContent{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10%;
+    width: 50%;
+}
+.featProductTitle {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    transition: 0.2s;
+}
+.featProductTitle:hover{
+    transform: translateY(-5px);
+}
+.featProductContent button {
+    background-color: var(--primary-color);
+    outline: none;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: 0.2s;
+    text-transform: uppercase;
+}
+.featProductContent button:hover{
+    background-color: gold;
+}
+.featProductContent:hover .featProductTitle{
+    transform: translateY(-5px);
+}

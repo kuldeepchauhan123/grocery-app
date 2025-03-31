@@ -10,7 +10,7 @@ import category8 from "../images/category8.png";
 import category9 from "../images/category9.png";
 import category10 from "../images/category10.png";
 import category11 from "../images/category11.png";
-import "./categoryslider.css";
+import "./Categoryslider.css";
 
 const CategoriesSlider = () => {
   const categories = [

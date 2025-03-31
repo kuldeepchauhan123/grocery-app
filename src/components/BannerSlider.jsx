@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bannerslider1 from "../images/bannerslider1.png";
 import bannerslider2 from "../images/bannerslider2.png";
-import "./banner.css";
+import "./BannerSlider.css";
 import NewsLetter from "./NewsLetter";
 
 const BannerSlider = () => {
@@ -14,7 +14,7 @@ const BannerSlider = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false,
     fade: true,
     autoplay: true,
   };

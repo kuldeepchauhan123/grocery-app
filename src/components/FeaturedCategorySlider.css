@@ -8,10 +8,11 @@
     transition: 0.3s;
     min-width: 140px;
     overflow: hidden;
-    margin: 5px;
+    margin-top: 15px;
+    
 }
 .cat-wrapper:hover{
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 }
 
 .cat-img img{
@@ -26,4 +27,23 @@
 }
 .cat-quantity{
     font-size: 14px;
+}
+.slick-prev{
+    right: 30px;
+    left: auto;
+    z-index: 9;
+}
+.slick-next{
+    right: 0px;
+}
+.slick-prev, .slick-next {
+    top: -20%;
+    
+}
+.slick-prev:before, .slick-next:before{
+    color: #c6c7c8;
+    font-size: 25px;
+}
+.slick-prev:hover:before, .slick-next:hover:before{
+    color: var(--primary-color);
 }

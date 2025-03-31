@@ -24,6 +24,9 @@
     font-weight: 500;
     margin-top: 1.5rem;
 }
+#banner-slider .slick-dots{
+    bottom: 25px;
+}
 #banner-slider .slick-dots li button:before,
 #banner-slider .slick-dots li button:after{
     font-size: 15px;
@@ -35,28 +38,6 @@
 #banner-slider .slick-dots li.slick-active button:before,
 #banner-slider .slick-dots li.slick-active button:after{
     color: var(--primary-color);
-}
-#banner-slider .slick-dots{
-    bottom: 25px;
-}
-#banner-slider .slick-prev {
-    left: 25px;
-    z-index: 9;
-}
-#banner-slider .slick-next{
-    right: 25px;
-}
-#banner-slider .slick-prev, .slick-next {
-    width: 40px;
-    height: 40px;    
-    border-radius: 50%;
-    padding-top: 3px;
-}
-#banner-slider .slick-prev:hover, .slick-next:hover{
-    background: var(--primary-color);
-}
-#banner-slider .slick-prev:before, .slick-next:before{
-    font-size: 40px;
 }
 .news-wrapper {
     position: absolute;

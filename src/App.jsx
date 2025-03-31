@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import BannerSlider from "./components/BannerSlider";
 import FeaturedCategories from "./components/FeaturedCategories";
+import FeaturedProducts from "./components/FeaturedProducts";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Navbar/>
         <BannerSlider/>
         <FeaturedCategories/>
+        <FeaturedProducts/>
       </BrowserRouter>
     </>
   );
