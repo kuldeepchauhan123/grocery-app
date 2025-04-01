@@ -8,10 +8,11 @@
 }
 ::selection{
   background-color: var(--primary-color);
-  color: #fff;
+  color: gold;
 }
 body{
   overflow-x: hidden;
+  zoom: 92%;
 }
 .container-fluid{
   padding-left: 30px;
