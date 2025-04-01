@@ -135,8 +135,51 @@
     background-color: var(--primary-color);
     color: #fff;
 }
+
+.proAction{
+    position: absolute;
+}
+.proAction ul {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, .1);
+    display: flex;
+    padding-left: 0px;
+    margin-bottom: 0;
+    background: #fff;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    transform: scale(0.8);
+}
+.proCardWrapper:hover .proAction ul{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+.proAction li{
+    list-style: none;
+}
+.proAction li a{
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    color: var(--primary-color);
+    border-right: 1px solid var(--primary-color);
+}
+.proAction li a:hover{
+    color: goldenrod;
+}
+.proAction li:last-child a{
+    border: none;
+}
 @media only screen and (min-width: 1200px) {
     .col-lg-1-5 {
         width: 20%;
     }
+}
+
+.tippy-box[data-theme~='green'] {
+    background-color: var(--primary-color);
+    color: #fff;
 }

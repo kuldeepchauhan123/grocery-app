@@ -22,6 +22,13 @@ import proHoverImg09 from "../images/product-9-2.jpg";
 import proHoverImg010 from "../images/product-10-2.jpg";
 import { Link } from "react-router-dom";
 import "./ProductCard.css";
+import { CiHeart } from "react-icons/ci";
+import { IoIosGitCompare } from "react-icons/io";
+import { GoEye } from "react-icons/go";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
+import 'tippy.js/themes/light.css';
+import 'tippy.js/animations/scale.css';
 
 const ProductCard = () => {
   return (
@@ -29,7 +36,10 @@ const ProductCard = () => {
       <div>
         <div className="row">
           {product.map((product) => (
-            <div className="col-lg-1-5 col-md-4 col-sm-6 col-12" key={product.id}>
+            <div
+              className="col-lg-1-5 col-md-4 col-sm-6 col-12"
+              key={product.id}
+            >
               <div className="proCardWrapper">
                 <div className="proImgAction">
                   <div className="proImg">
@@ -38,7 +48,31 @@ const ProductCard = () => {
                       <img className="hoverImg" src={product.proHoverImg} />
                     </Link>
                   </div>
-                  <div className="proAction"></div>
+                  <div className="proAction">
+                    <ul>
+                      <li>
+                        <Tippy animation={"scale"} theme={"green"} content={"Wishlist"}>
+                          <Link>
+                            <CiHeart />
+                          </Link>
+                        </Tippy>
+                      </li>
+                      <li>
+                        <Tippy animation={"scale"} theme={"green"} content="Compare">
+                          <Link>
+                            <IoIosGitCompare />
+                          </Link>
+                        </Tippy>
+                      </li>
+                      <li>
+                        <Tippy animation={"scale"} theme={"green"} content="Quick View">
+                          <Link>
+                            <GoEye />
+                          </Link>
+                        </Tippy>
+                      </li>
+                    </ul>
+                  </div>
                   <div className="proBadge">
                     {product.badge && product.badge === "Hot" ? (
                       <span className="bg-danger">{product.badge}</span>
@@ -215,7 +249,7 @@ const product = [
     proRating: 4.2,
     proCompany: "Tyson",
     proNewPrice: 22.85,
-    proOldPrice: 26.50,
-  }
+    proOldPrice: 26.5,
+  },
 ];
 export default ProductCard;
