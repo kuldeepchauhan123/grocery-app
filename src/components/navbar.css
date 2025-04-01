@@ -48,7 +48,7 @@
     margin-bottom: 0;
 }
 .navlink-wrapper li:hover .dropmenu{
-    top: calc(100% + 2px);
+    top: calc(100% + 1px);
     opacity: 1;
     visibility: visible;
 }

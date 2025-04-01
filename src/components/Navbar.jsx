@@ -12,7 +12,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div className="border">
+      <div className="border sticky-top bg-white">
         <div className="container-fluid">
           <div className="row align-items-center justify-space-between position-relative">
             <div className="col-lg-3">

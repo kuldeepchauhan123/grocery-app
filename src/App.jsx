@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import BannerSlider from "./components/BannerSlider";
 import FeaturedCategories from "./components/FeaturedCategories";
 import FeaturedProducts from "./components/FeaturedProducts";
+import PopularProducts from "./components/PopularProducts";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <BannerSlider/>
         <FeaturedCategories/>
         <FeaturedProducts/>
+        <PopularProducts/>
       </BrowserRouter>
     </>
   );

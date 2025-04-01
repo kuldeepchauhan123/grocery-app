@@ -1,0 +1,23 @@
+.filter-list{
+    list-style: none;
+}
+.filter-list li{
+    margin: 5px;
+}
+.filter-list li a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 500;
+    font-size: 14px;
+    padding: 5px;
+    display: block;
+    transition: 0.3s;
+}
+.filter-list li:hover a{
+    color: var(--primary-color);
+    transform: translateY(-3px);
+
+}
+.filter-list li.active a{
+    color: var(--primary-color);
+}

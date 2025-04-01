@@ -1,0 +1,142 @@
+.proCardWrapper {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 280px;
+    margin: 10px 0px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;    
+}
+.proCardWrapper:hover{
+    border-color: #cdfee8;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+.proImgAction {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px 10px 0px;
+}
+.proImg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 15px;
+}
+.proImg a{
+    display: block;
+    margin: 20px;
+    overflow: hidden;
+}
+.proImg a img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+    max-width: 100%;
+    transition: 0.3s ease-in;    
+}
+.proImg a .hoverImg{
+    opacity: 0;
+    visibility: hidden;    
+}
+.proCardWrapper:hover .proImg a .hoverImg{
+    visibility: visible;
+    opacity: 1;    
+}
+.proCardWrapper:hover .proImg a .defaultImg{
+    opacity: 0;
+    visibility: hidden;
+}
+.proCardWrapper:hover .proImg a img{
+    transform: scale(1.05);
+}
+.proBadge {
+    position: absolute;
+    top: 0;
+    left: 0;    
+}
+.proBadge span{
+    background: transparent;
+    border-bottom-right-radius: 10px;
+    display: block;
+    padding: 4px 15px;
+    font-weight: 500;
+    color: #fff;
+    font-size: .7rem;
+}
+.proContentWrapper{
+    padding: 0px 15px 15px;
+}
+.proCat{
+    font-size: 12px;
+}
+.proTitle{
+    font-size: .9rem;
+    font-weight: 600;
+    margin: 7px 0px;
+}
+.proTitle:hover{
+    color: var(--primary-color);
+}
+.proRating{
+    display: block;    
+}
+.proCompany{
+    font-size: 12px;
+    margin: 7px 0px;
+    display: block;
+}
+.proFooter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.proNewPrice{
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.15rem;
+    display: inline-block;
+}
+.proOldPrice{
+    color: red;
+    text-decoration: line-through;
+    font-size: .9rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-left: 10px;
+    opacity: .5;
+}
+.proFooter button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #cdfee8;
+    border: none;
+    color: var(--primary-color);
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: .9rem;
+    transition: 0.3s;
+}
+.proFooter button:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+@media only screen and (min-width: 1200px) {
+    .col-lg-1-5 {
+        width: 20%;
+    }
+}
