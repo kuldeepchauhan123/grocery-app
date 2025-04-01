@@ -6,7 +6,10 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-
+::selection{
+  background-color: var(--primary-color);
+  color: #fff;
+}
 body{
   overflow-x: hidden;
 }
