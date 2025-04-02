@@ -6,6 +6,7 @@ import BannerSlider from "./components/BannerSlider";
 import FeaturedCategories from "./components/FeaturedCategories";
 import FeaturedProducts from "./components/FeaturedProducts";
 import PopularProducts from "./components/PopularProducts";
+import BestSells from "./components/BestSells";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <FeaturedCategories/>
         <FeaturedProducts/>
         <PopularProducts/>
+        <BestSells/>
       </BrowserRouter>
     </>
   );

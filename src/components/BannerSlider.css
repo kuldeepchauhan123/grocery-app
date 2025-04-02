@@ -29,7 +29,7 @@
 }
 #banner-slider .slick-dots li button:before,
 #banner-slider .slick-dots li button:after{
-    font-size: 15px;
+    font-size: 14px;
     color: transparent;
     border : 2px solid var(--primary-color);
     border-radius: 50%;

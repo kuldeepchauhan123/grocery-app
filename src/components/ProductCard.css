@@ -1,8 +1,7 @@
 .proCardWrapper {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    width: 100%;
-    max-width: 280px;
+    width: 100%;    
     margin: 10px 0px;
     position: relative;
     overflow: hidden;
@@ -150,6 +149,7 @@
     visibility: hidden;
     transition: 0.3s;
     transform: scale(0.8);
+    
 }
 .proCardWrapper:hover .proAction ul{
     opacity: 1;
@@ -165,7 +165,7 @@
     font-weight: 600;
     padding: 4px 10px;
     color: var(--primary-color);
-    border-right: 1px solid var(--primary-color);
+    border-right: 1px solid var(--primary-color);    
 }
 .proAction li a:hover{
     color: goldenrod;

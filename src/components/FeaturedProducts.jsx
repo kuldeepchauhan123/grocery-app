@@ -30,8 +30,8 @@ const FeaturedProducts = () => {
       <div className="container-fluid">
         <div className="row">
           {featProducts.map((item) => (
-            <div className="col-lg-4 mb-5">
-              <div key={item.id} className="featProduct">
+            <div className="col-lg-4 mb-5" key={item.id}>
+              <div className="featProduct">
                 <img src={item.image}/>
                 <div className="featProductContent">
                   <div className="featProductTitle">{item.title}</div>
