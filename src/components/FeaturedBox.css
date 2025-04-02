@@ -1,0 +1,28 @@
+.featuredBox{
+    background-color: rgba(180, 180, 180, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 280px;
+}
+.featuredBox img{
+    width: 50px;
+    position: relative;
+    transition: 0.3s;
+}
+.featuredBox:hover img{
+    transform: translateY(-5px);
+}
+.featuredBox-Content{
+    padding-top: 5px;
+}
+.featuredBox-Content h6{
+    font-weight: 600;
+    margin-bottom: .25rem;
+}
+.featuredBox-Content small{
+    opacity: 0.6;
+}

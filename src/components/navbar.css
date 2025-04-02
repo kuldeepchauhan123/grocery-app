@@ -58,8 +58,9 @@
     justify-content: flex-end;
     gap: 5px;
 }
-.call-number p{
+.call-number p {
     line-height: 0.75;
+    padding-top: 4px;
 }
 .call-number svg{
     font-size: 40px;    

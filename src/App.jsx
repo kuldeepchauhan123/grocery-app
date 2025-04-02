@@ -8,6 +8,7 @@ import FeaturedProducts from "./components/FeaturedProducts";
 import PopularProducts from "./components/PopularProducts";
 import BestSells from "./components/BestSells";
 import MultiProducts from "./components/MultiProducts";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         <FeaturedProducts/>
         <PopularProducts/>
         <BestSells/>
-        <MultiProducts/>
+        <MultiProducts/>        
+        <Footer/>
       </BrowserRouter>
     </>
   );

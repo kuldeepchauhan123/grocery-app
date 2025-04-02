@@ -8,7 +8,7 @@
 }
 ::selection{
   background-color: var(--primary-color);
-  color: gold;
+  color: #fff;
 }
 body{
   overflow-x: hidden;
@@ -17,6 +17,9 @@ body{
 .container-fluid{
   padding-left: 30px;
   padding-right: 30px;
+}
+.pointer{
+  cursor: pointer;
 }
 .title{
   font-weight: 600;
