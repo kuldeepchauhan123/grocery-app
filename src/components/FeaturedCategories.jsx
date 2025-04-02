@@ -18,8 +18,6 @@ import "./FeaturedCategorySlider.css";
 
 const FeaturedCategories = () => {
   var settings = {
-    className: "center",
-    centerMode: true,
     dots: false,
     infinite: true,
     speed: 500,
@@ -27,6 +25,7 @@ const FeaturedCategories = () => {
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
+    centerMode: true,
   };
 
   return (

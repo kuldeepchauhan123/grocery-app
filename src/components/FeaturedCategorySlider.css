@@ -8,13 +8,11 @@
     transition: 0.3s;
     min-width: 140px;
     overflow: hidden;
-    margin-top: 15px;
-    
+    margin-top: 15px;    
 }
 .cat-wrapper:hover{
     transform: translateY(-5px);
 }
-
 .cat-img img{
     width: 100px;
     margin: auto;
