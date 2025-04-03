@@ -119,25 +119,25 @@ const Footer = () => {
                 <h6 className="heading-underline mb-3">Account</h6>
                 <ul className="ps-0 list-unstyled ftr-menu">
                   <li>
-                    <Link to="/">About Us</Link>
+                    <Link to="/">Sign In</Link>
                   </li>
                   <li>
-                    <Link to="/">Career</Link>
+                    <Link to="/">View Cart</Link>
                   </li>
                   <li>
-                    <Link to="/">Contact Us</Link>
+                    <Link to="/">My Wishlist</Link>
                   </li>
                   <li>
-                    <Link to="/">Privacy Policy</Link>
+                    <Link to="/">Track Order</Link>
                   </li>
                   <li>
-                    <Link to="/">Terms & Conditions</Link>
+                    <Link to="/">Shipping Details</Link>
                   </li>
                   <li>
-                    <Link to="/">Support Center</Link>
+                    <Link to="/">Help Ticket</Link>
                   </li>
                   <li>
-                    <Link to="/">Delivery Information</Link>
+                    <Link to="/">Compare Products</Link>
                   </li>
                 </ul>
               </div>
@@ -147,25 +147,25 @@ const Footer = () => {
                 <h6 className="heading-underline mb-3">Corporate</h6>
                 <ul className="ps-0 list-unstyled ftr-menu">
                   <li>
-                    <Link to="/">About Us</Link>
+                    <Link to="/">Become a Vendor</Link>
                   </li>
                   <li>
-                    <Link to="/">Career</Link>
+                    <Link to="/">Affiliate Program</Link>
                   </li>
                   <li>
-                    <Link to="/">Contact Us</Link>
+                    <Link to="/">Farm Business</Link>
                   </li>
                   <li>
-                    <Link to="/">Privacy Policy</Link>
+                    <Link to="/">Farm Careers</Link>
                   </li>
                   <li>
-                    <Link to="/">Terms & Conditions</Link>
+                    <Link to="/">Our Suppliers</Link>
                   </li>
                   <li>
-                    <Link to="/">Support Center</Link>
+                    <Link to="/">Accessibility</Link>
                   </li>
                   <li>
-                    <Link to="/">Delivery Information</Link>
+                    <Link to="/">Promotions</Link>
                   </li>
                 </ul>
               </div>
@@ -175,22 +175,22 @@ const Footer = () => {
                 <h6 className="heading-underline mb-3">Popular</h6>
                 <ul className="ps-0 list-unstyled ftr-menu">
                   <li>
-                    <Link to="/">About Us</Link>
+                    <Link to="/">Flavoured Milk</Link>
                   </li>
                   <li>
-                    <Link to="/">Career</Link>
+                    <Link to="/">Butter</Link>
                   </li>
                   <li>
-                    <Link to="/">Contact Us</Link>
+                    <Link to="/">Eggs</Link>
                   </li>
                   <li>
-                    <Link to="/">Privacy Policy</Link>
+                    <Link to="/">Marmalades</Link>
                   </li>
                   <li>
-                    <Link to="/">Terms & Conditions</Link>
+                    <Link to="/">Tea & Combucha</Link>
                   </li>
                   <li>
-                    <Link to="/">Support Center</Link>
+                    <Link to="/">Cheese</Link>
                   </li>
                   <li>
                     <Link to="/">Delivery Information</Link>
@@ -202,10 +202,10 @@ const Footer = () => {
               <h6 className="heading-underline mb-3">Install App</h6>
               <div className="app-store">
                 <p className="mb-2">From App store or Play store</p>
-                <Link>
+                <Link to={"https://www.apple.com/in/app-store/"} target="_blank">
                   <img src={appStore} />
                 </Link>
-                <Link>
+                <Link to={"https://play.google.com/store/apps"} target="_blank">
                   <img src={playStore} />
                 </Link>
               </div>
