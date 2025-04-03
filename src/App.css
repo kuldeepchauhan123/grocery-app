@@ -47,7 +47,7 @@ a{
   position: absolute;
   left: 0;
   bottom: calc(0px - 1px);
-  width: 100px;
+  width: 80px;
   height: 4px;
   background-color: var(--primary-color);
 }
