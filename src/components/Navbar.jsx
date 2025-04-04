@@ -26,13 +26,13 @@ const Navbar = () => {
             <div className="col-lg-6">
               <ul className="navlink-wrapper">
                 <li>
-                  <Link>Home</Link>
+                  <Link to={"/home"}>Home</Link>
                 </li>
                 <li>
-                  <Link>About</Link>
+                  <Link to={"/about"}>About</Link>
                 </li>
                 <li>
-                  <Link>Shop</Link>
+                  <Link to={"/shop"}>Shop</Link>
                 </li>
                 <li className="position-static">
                   <Link>Mega-Menu <IoIosArrowDown /></Link>

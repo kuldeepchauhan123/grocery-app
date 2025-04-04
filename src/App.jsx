@@ -1,31 +1,30 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import BannerSlider from "./components/BannerSlider";
-import FeaturedCategories from "./components/FeaturedCategories";
-import FeaturedProducts from "./components/FeaturedProducts";
-import PopularProducts from "./components/PopularProducts";
-import BestSells from "./components/BestSells";
-import MultiProducts from "./components/MultiProducts";
-import Footer from "./components/Footer";
+
+import Home from './Pages/Home'
+import About from './Pages/About'
+
+import Navbar from './components/Navbar'
+import Header from './components/Header'
+import Footer from './components/Footer'
+
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
+      <Header/>
+      <Navbar/>
+      
+        
         <Routes>
-          <Route to="/"  element={<Navbar/>}/>
+          <Route path="/home"  element={<Home/>}/>
+          <Route path="/about"  element={<About/>}/>
+          <Route path="*"  element={<Error/>}/>
         </Routes>
-        <Navbar/>
-        <BannerSlider/>
-        <FeaturedCategories/>
-        <FeaturedProducts/>
-        <PopularProducts/>
-        <BestSells/>
-        <MultiProducts/>        
         <Footer/>
+       
+        
       </BrowserRouter>
     </>
   );
