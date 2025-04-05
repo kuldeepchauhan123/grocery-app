@@ -3,6 +3,7 @@ import "./App.css";
 
 import Home from './Pages/Home'
 import Shop from './Pages/Shop'
+import Error from './Pages/Error'
 
 import Navbar from './components/Navbar'
 import Header from './components/Header'

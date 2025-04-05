@@ -10,7 +10,7 @@ const PriceFilter = () => {
         <label for="customRange1" className="form-label fw-semibold">
           Price range
         </label>
-        <input type="range" min="0" max="5" className="form-range" id="customRange1" />
+        <input type="range" className="form-range" id="customRange1" />
       </div>
 
       <ul className="ps-1 list-unstyled">
