@@ -100,3 +100,24 @@ input[type="range"]::-webkit-slider-thumb{
     width: 20%;
   }
 }
+
+.add-cart-btn-big{
+  outline: none;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 3px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  transition: 0.3s;
+  height: 48px;
+}
+.add-cart-btn-big svg{
+  font-size: 1.5rem;
+}
+.add-cart-btn-big:hover{
+  background-color: #2d9666;
+}

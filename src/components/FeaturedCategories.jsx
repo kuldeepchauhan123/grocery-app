@@ -34,7 +34,7 @@ const FeaturedCategories = () => {
         <h3 className="title mb-4">Featured Categories</h3>
         <div className="row">
           <div className="col-lg-12">
-            <Slider {...settings}>
+            <Slider {...settings} className="categorySlider">
               {categories.map((item) => (
                 <div key={item.id}>
                   <div className="cat-wrapper" style={{ backgroundColor: item.bg}}>

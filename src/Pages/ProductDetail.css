@@ -1,0 +1,130 @@
+.zoomSlider .slick-prev{
+    left: 0px;    
+    z-index: 9;
+}
+.zoomSlider .slick-next{
+    right: 0px;
+}
+.zoomSlider .slick-prev, .zoomSlider .slick-next {
+    top: 50%;
+    
+}
+.zoomSlider .slick-prev:before, .zoomSlider .slick-next:before{
+    color: #c6c7c8;
+    font-size: 30px;
+}
+.zoomSlider .slick-prev:hover:before, .zoomSlider .slick-next:hover:before{
+    color: var(--primary-color);
+} 
+
+.zoomSlider .item{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: auto;    
+}
+.zoomSlider .item img{
+    margin: auto;
+}
+.zoomSlider .slick-current .item{
+    border-color: var(--primary-color);
+}
+.zoomSlider .slick-slide .item:focus-visible{
+    outline: none;
+}
+
+.review{
+    margin: 1rem 0 1.5rem;
+}
+.pricebox{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.newprice{
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 4rem;
+}
+.oldprice{
+    display: flex;
+    flex-direction: column;
+}
+.oldprice .perOff{
+    color: gold;
+    font-weight: 500;
+}
+.oldprice .cutprice{
+    text-decoration: line-through;
+    font-size: 1.5rem;
+    font-weight: 700;
+    opacity: .5;
+}
+.pro-short-des{
+    line-height: 1.75rem;
+}
+.btn-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.quantity{
+    position: relative;
+    border: 2px solid var(--primary-color);
+    border-radius: 3px;
+    height: 48px;
+}
+.quantity button{
+    border: none;
+    height: 100%;
+    padding: 5px;
+}
+.quantity button svg{
+    font-size: 1.5rem;
+}
+.quantity button:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.quantity input{
+    border: none;   
+    width: 50px;
+    text-align: center;
+}
+.quantity input:focus{
+    outline: none;    
+}
+.wishlist-btn{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: 0.2s;
+}
+.wishlist-btn svg{
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+.wishlist-btn:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.wishlist-btn:hover svg{
+    opacity: 1;
+}
+
+.product-table tr{
+    padding: 10px;
+}
+.product-table tr td{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 15px 6px 0px;    
+}
+.product-table tr td span{
+    color: var(--primary-color);
+    font-weight: 400;
+}
