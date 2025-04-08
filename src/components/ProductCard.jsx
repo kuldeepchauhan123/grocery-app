@@ -29,6 +29,7 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 // import "tippy.js/themes/light.css";
 import "tippy.js/animations/scale.css";
+import StarRating from "./StarRating";
 
 
 const ProductCard = () => {
@@ -95,7 +96,9 @@ const ProductCard = () => {
               Seeds of Change Organic Quinoa, Brown, & Red Rice
             </Link>
           </div>
-          <small className="proRating">(4.0)</small>
+          <small className="proRating">
+            <StarRating star={4}/>
+          </small>
           <small className="proCompany">
             By <span className="text-success fw-semibold">NestFood</span>
           </small>
