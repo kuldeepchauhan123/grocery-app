@@ -1,12 +1,15 @@
 .zoomSlider .slick-prev{
-    left: 0px;    
-    z-index: 9;
+    left: -15px;
+    z-index: 9;    
+    
 }
 .zoomSlider .slick-next{
-    right: 0px;
+    right: -15px;
 }
 .zoomSlider .slick-prev, .zoomSlider .slick-next {
     top: 50%;
+    width: 30px;
+    height: 30px;
     
 }
 .zoomSlider .slick-prev:before, .zoomSlider .slick-next:before{
@@ -17,21 +20,28 @@
     color: var(--primary-color);
 } 
 
+.zoomSlider .slick-slide>div{
+    margin: 0px 10px;
+}
 .zoomSlider .item{
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin: auto;    
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        
 }
 .zoomSlider .item img{
     margin: auto;
+    display: block;
 }
-.zoomSlider .slick-current .item{
+.zoomSlider .slick-active.slick-current .item{
     border-color: var(--primary-color);
 }
 .zoomSlider .slick-slide .item:focus-visible{
     outline: none;
 }
-
 .review{
     margin: 1rem 0 1.5rem;
 }
@@ -127,4 +137,34 @@
 .product-table tr td span{
     color: var(--primary-color);
     font-weight: 400;
+}
+
+.tab-wrapper{
+
+}
+.custom-tab{
+    display: flex;
+    gap: 15px;
+}
+.custom-tab li{
+    cursor: pointer;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    display: inline-block;
+    transition: 0.2s;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: rgb(0, 0, 0, 0.6);
+}
+.custom-tab li:hover,
+.custom-tab li.active{
+    color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.tab-table tr td,
+.tab-table tr th{
+    padding: 8px 10px 8px 0px;
 }

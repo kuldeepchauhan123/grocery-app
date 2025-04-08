@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineHome } from "react-icons/hi2";
+import ProductCard from "../components/ProductCard";
 
 import InnerImageZoom from "react-inner-image-zoom";
 import "react-inner-image-zoom/lib/styles.min.css";
@@ -24,14 +25,24 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { IoCartOutline } from "react-icons/io5";
 import { IoIosHeartEmpty } from "react-icons/io";
 
-import PriceFilter from "../components/PriceFilter";
-import CategoryFilter from "../components/CategoryFilter";
-
-import widgetBanner from "../images/widget-banner.png";
-
 const ProductDetail = () => {
   const [zoomImg, setZoomImg] = useState(mainproduct1);
   const [counter, setCounter] = useState(1);
+  const [activeTab, setActiveTab] = useState(0);
+
+  const sliderRef2 = useRef();
+  const sliderRef = useRef();
+
+  var settings2 = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 0,
+    arrows: false,
+    autoplay: false,
+    fade: false,
+  };
 
   var settings = {
     dots: false,
@@ -39,7 +50,17 @@ const ProductDetail = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: true      
+    arrows: true,
+  };
+
+  var related = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,    
   };
 
   const images = [
@@ -52,21 +73,23 @@ const ProductDetail = () => {
     mainproduct7,
   ];
 
-  const GoTo = (img) => {
-    setZoomImg(img);
+  const GoTo = (img, index) => {
+    setTimeout(() => {
+      setZoomImg(img);
+    }, 500);
+    sliderRef.current.slickGoTo(index);
+    sliderRef2.current.slickGoTo(index);
   };
 
   const increment = () => {
     if (counter !== 10) {
-        setCounter(counter + 1);
+      setCounter(counter + 1);
     }
-    
   };
   const decrement = () => {
     if (counter !== 1) {
-        setCounter(counter - 1);
+      setCounter(counter - 1);
     }
-    
   };
   return (
     <>
@@ -94,20 +117,34 @@ const ProductDetail = () => {
 
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-9">
+          <div className="col-md-10 offset-md-1">
             <div className="row">
               <div className="col-md-5 mt-5">
                 <div className="zoomimg border overflow-hidden rounded-3">
-                  <InnerImageZoom
-                    src={zoomImg}
-                    zoomType="hover"
-                    fullscreenOnMobile="true"
-                  />
+                  <Slider {...settings2} ref={sliderRef2}>
+                    {images.map((img, index) => (
+                      <div className="item" key={index}>
+                        <InnerImageZoom
+                          src={zoomImg}
+                          zoomType="hover"
+                          fullscreenOnMobile="true"
+                        />
+                      </div>
+                    ))}
+                  </Slider>
                 </div>
-                <Slider {...settings} className="zoomSlider mt-3">
+                <Slider
+                  {...settings}
+                  className="zoomSlider mt-3"
+                  ref={sliderRef}
+                >
                   {images.map((img, index) => (
                     <div className="item" key={index}>
-                      <img src={img} width={100} onClick={() => GoTo(img)} />
+                      <img
+                        src={img}
+                        width={100}
+                        onClick={() => GoTo(img, index)}
+                      />
                     </div>
                   ))}
                 </Slider>
@@ -187,29 +224,206 @@ const ProductDetail = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-3">
-            <div className="mb-5 mt-5">
-              <CategoryFilter />
+        </div>
+      </div>
+
+      <div className="container-fluid mt-5">
+        <div className="row">
+          <div className="col-md-10 offset-md-1">
+            <div className="tab-wrapper border rounded-4 p-5">
+              <ul className="list-unstyled custom-tab">
+                <li
+                  className={`${activeTab === 0 && "active"}`}
+                  onClick={() => setActiveTab(0)}
+                >
+                  Description
+                </li>
+                <li
+                  className={`${activeTab === 1 && "active"}`}
+                  onClick={() => setActiveTab(1)}
+                >
+                  Additional Info
+                </li>
+                <li
+                  className={`${activeTab === 2 && "active"}`}
+                  onClick={() => setActiveTab(2)}
+                >
+                  Reviews (0)
+                </li>
+              </ul>
+              <div className="tab-content-wrapper mt-5">
+                {activeTab === 0 && (
+                  <div className="tab-content-inner">
+                    <p>
+                      Uninhibited carnally hired played in whimpered dear
+                      gorilla koala depending and much yikes off far quetzal
+                      goodness and from for grimaced goodness unaccountably and
+                      meadowlark near unblushingly crucial scallop tightly
+                      neurotic hungrily some and dear furiously this apart.
+                    </p>
+                    <p>
+                      Spluttered narrowly yikes left moth in yikes bowed this
+                      that grizzly much hello on spoon-fed that alas rethought
+                      much decently richly and wow against the frequent fluidly
+                      at formidable acceptably flapped besides and much circa
+                      far over the bucolically hey precarious goldfinch mastodon
+                      goodness gnashed a jellyfish and one however because.
+                    </p>
+                    <table className="tab-table table mt-4">
+                      <tr>
+                        <td>Type Of Packing</td>
+                        <td>:</td>
+                        <td>Bottle</td>
+                      </tr>
+                      <tr>
+                        <td>Color</td>
+                        <td>:</td>
+                        <td>Green, Pink, Powder Blue, Purple</td>
+                      </tr>
+                      <tr>
+                        <td>Quantity Per Case</td>
+                        <td>:</td>
+                        <td>1000 ml</td>
+                      </tr>
+                      <tr>
+                        <td>Piece In One</td>
+                        <td>:</td>
+                        <td>Carton</td>
+                      </tr>
+                    </table>
+                    <hr />
+                    <p>
+                      Laconic overheard dear woodchuck wow this outrageously
+                      taut beaver hey hello far meadowlark imitatively
+                      egregiously hugged that yikes minimally unanimous pouted
+                      flirtatiously as beaver beheld above forward energetic
+                      across this jeepers beneficently cockily less a the
+                      raucously that magic upheld far so the this where crud
+                      then below after jeez enchanting drunkenly more much wow
+                      callously irrespective limpet.
+                    </p>
+                    <h4 className="fw-semibold">Packaging & Delivery</h4>
+                    <hr />
+                    <p>
+                      Uninhibited carnally hired played in whimpered dear
+                      gorilla koala depending and much yikes off far quetzal
+                      goodness and from for grimaced goodness unaccountably and
+                      meadowlark near unblushingly crucial scallop tightly
+                      neurotic hungrily some and dear furiously this apart.
+                    </p>
+                    <p>
+                      Spluttered narrowly yikes left moth in yikes bowed this
+                      that grizzly much hello on spoon-fed that alas rethought
+                      much decently richly and wow against the frequent fluidly
+                      at formidable acceptably flapped besides and much circa
+                      far over the bucolically hey precarious goldfinch mastodon
+                      goodness gnashed a jellyfish and one however because.
+                    </p>
+                    <h4 className="fw-semibold">Warnings</h4>
+                    <p>
+                      Uninhibited carnally hired played in whimpered dear
+                      gorilla koala depending and much yikes off far quetzal
+                      goodness and from for grimaced goodness unaccountably and
+                      meadowlark near unblushingly crucial scallop tightly
+                      neurotic hungrily some and dear furiously this apart.
+                    </p>
+                  </div>
+                )}
+
+                {activeTab === 1 && (
+                  <div className="tab-content-inner">
+                    <table class="tab-table">
+                      <tbody>
+                        <tr class="stand-up">
+                          <th>Stand Up</th>
+                          <td>35″L x 24″W x 37-45″H(front to back wheel)</td>
+                        </tr>
+                        <tr class="folded-wo-wheels">
+                          <th>Folded (w/o wheels)</th>
+                          <td>32.5″L x 18.5″W x 16.5″H</td>
+                        </tr>
+                        <tr class="folded-w-wheels">
+                          <th>Folded (w/ wheels)</th>
+                          <td>32.5″L x 24″W x 18.5″H</td>
+                        </tr>
+                        <tr class="door-pass-through">
+                          <th>Door Pass Through</th>
+                          <td>24</td>
+                        </tr>
+                        <tr class="frame">
+                          <th>Frame</th>
+                          <td>Aluminum</td>
+                        </tr>
+                        <tr class="weight-wo-wheels">
+                          <th>Weight (w/o wheels)</th>
+                          <td>20 LBS</td>
+                        </tr>
+                        <tr class="weight-capacity">
+                          <th>Weight Capacity</th>
+                          <td>60 LBS</td>
+                        </tr>
+                        <tr class="width">
+                          <th>Width</th>
+                          <td>24″</td>
+                        </tr>
+                        <tr class="handle-height-ground-to-handle">
+                          <th>Handle height (ground to handle)</th>
+                          <td>37-45″</td>
+                        </tr>
+                        <tr class="wheels">
+                          <th>Wheels</th>
+                          <td>12″ air / wide track slick tread</td>
+                        </tr>
+                        <tr class="seat-back-height">
+                          <th>Seat back height</th>
+                          <td>21.5″</td>
+                        </tr>
+                        <tr class="head-room-inside-canopy">
+                          <th>Head room (inside canopy)</th>
+                          <td>25″</td>
+                        </tr>
+                        <tr class="pa_color">
+                          <th>Color</th>
+                          <td>Black, Blue, Red, White</td>
+                        </tr>
+                        <tr class="pa_size">
+                          <th>Size</th>
+                          <td>M, S</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+
+                {activeTab === 2 && (
+                  <div className="tab-content-wrapper">
+                    <h4>No reviews here to show.</h4>
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="mb-5">
-              <PriceFilter />
-            </div>
-            <div
-              className="widget-banner p-5 position-relative rounded-3 overflow-hidden"
-              style={{ height: 350 }}
-            >
-              <img
-                className="position-absolute top-0 start-0 shadow-sm"
-                src={widgetBanner}
-                width={"100%"}
-                height={"100%"}
-              />
-              <p className="position-relative pt-4 fw-bold fs-4">
-                Save 17%
-                <br /> on <span className="text-success">Organic</span>
-                <br /> Juice
-              </p>
-            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container-fluid mt-5">
+        <div className="row">
+          <div className="col-md-10 offset-md-1">
+            <h3 className="heading-underline">Related Products</h3>
+            <Slider {...related} className="bestSells-Slider mt-4">
+              <div className="col-3 px-2">
+                <ProductCard />
+              </div>
+              <div className="col-3 px-2">
+                <ProductCard />
+              </div>
+              <div className="col-3 px-2">
+                <ProductCard />
+              </div>
+              <div className="col-3 px-2">
+                <ProductCard />
+              </div>
+            </Slider>
           </div>
         </div>
       </div>
