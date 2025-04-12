@@ -61,7 +61,7 @@ const Cart = () => {
         <div className="text-center">
           <img src={emptyCart} width={300} />
           <h5>Your shopping cart is empty !</h5>
-          <button className="smallBtn mx-auto my-4 p-3" >Continue Shopping</button>
+          <button className="smallBtn mx-auto my-4 p-3" ><Link to="/"> Continue Shopping </Link></button>
         </div>
       )}
 
