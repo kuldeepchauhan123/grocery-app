@@ -82,6 +82,8 @@
     border: 2px solid var(--primary-color);
     border-radius: 3px;
     height: 48px;
+    width: 122px;
+    background-color: #fff;
 }
 .quantity button{
     border: none;

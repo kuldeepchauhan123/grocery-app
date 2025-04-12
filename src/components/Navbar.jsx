@@ -8,7 +8,7 @@ import { PiHeadphones } from "react-icons/pi";
 import { IoIosArrowDown } from "react-icons/io";
 import bannerMenu from '../images/banner-menu.png';
 
-const Navbar = () => {
+const Navbar = () => {  
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>

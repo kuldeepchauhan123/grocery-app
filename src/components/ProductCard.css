@@ -81,9 +81,17 @@
     font-size: 12px;
 }
 .proTitle{
+    display: -webkit-box;
     font-size: .9rem;
     font-weight: 600;
     margin: 7px 0px;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 40px;
 }
 .proTitle:hover{
     color: var(--primary-color);
@@ -173,11 +181,7 @@
 .proAction li:last-child a{
     border: none;
 }
-@media only screen and (min-width: 1200px) {
-    .col-lg-1-5 {
-        width: 20%;
-    }
-}
+
 
 .tippy-box[data-theme~='green'] {
     background-color: var(--primary-color);

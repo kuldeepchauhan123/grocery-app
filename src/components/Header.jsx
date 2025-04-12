@@ -13,45 +13,47 @@ import { GiSettingsKnobs } from "react-icons/gi";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowDropup } from "react-icons/io";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-  const [isOpenDropdown, setisOpenDropdown] = useState(false)
+  const items = useSelector((state) => state.cart);
+  const [isOpenDropdown, setisOpenDropdown] = useState(false);
 
   let toggleDropdown = () => {
-    setisOpenDropdown(!isOpenDropdown)
-  }
+    setisOpenDropdown(!isOpenDropdown);
+  };
 
   const accountMenu = [
     {
       id: 1,
       text: "My Account",
       path: "/",
-      icon: <CiUser />
+      icon: <CiUser />,
     },
     {
       id: 2,
       text: "Order Tracking",
       path: "/",
-      icon: <CiDeliveryTruck />
+      icon: <CiDeliveryTruck />,
     },
     {
       id: 3,
       text: "Wishlist",
       path: "/",
-      icon: <CiHeart />
+      icon: <CiHeart />,
     },
     {
       id: 4,
       text: "Setting",
       path: "/",
-      icon: <GiSettingsKnobs />
+      icon: <GiSettingsKnobs />,
     },
     {
       id: 5,
       text: "Sign Out",
       path: "/",
-      icon: <PiSignOut />
-    }
+      icon: <PiSignOut />,
+    },
   ];
 
   return (
@@ -83,28 +85,32 @@ const Header = () => {
                 </span>
               </li>
               <li className="iconlist">
-                <span>
-                  <CiShoppingCart /> 
-                  Cart {!isOpenDropdown ? <IoMdArrowDropdown /> : <IoMdArrowDropup />}
-                </span>
+                <Link to="/cart">
+                  <span className="position-relative">
+                    <CiShoppingCart />
+                    Cart{" "}
+                    {items.length >= 1 && (
+                      <small className="item-badge">{items.length}</small>
+                    )}
+                  </span>
+                </Link>
               </li>
               <li className="iconlist">
                 <span onClick={toggleDropdown}>
-                  <CiUser /> 
-                  Account {!isOpenDropdown ? <IoMdArrowDropdown /> : <IoMdArrowDropup />}
+                  <CiUser />
+                  Account{" "}
+                  {!isOpenDropdown ? (
+                    <IoMdArrowDropdown />
+                  ) : (
+                    <IoMdArrowDropup />
+                  )}
                 </span>
-                {
-                  isOpenDropdown && 
-                  <Dropdown data={accountMenu}/> 
-
-                }
-                
+                {isOpenDropdown && <Dropdown data={accountMenu} />}
               </li>
             </ul>
           </div>
         </div>
       </div>
-      
     </header>
   );
 };

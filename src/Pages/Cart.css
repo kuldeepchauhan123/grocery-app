@@ -1,0 +1,55 @@
+
+.cart-header{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.clear-cart{
+    display: flex;
+    align-items: center;
+    font-size: 1.15rem;
+    font-weight: 500;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.clear-cart:hover{
+    color: brown;
+}
+.cart-table table{
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.thead-dark{
+    background-color: gainsboro;    
+}
+.thead-dark tr th,
+.cart-table table tr td{
+    padding: 10px;
+}
+.thead-dark tr th input[type="checkbox"],
+.cart-table table tr td input[type="checkbox"]{    
+    height: 20px;
+    width: 20px;
+}
+.cart-table table tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cart-table table tr:hover{
+    background-color: rgba(0, 255, 0, 0.03);
+}
+.cart-img-box{
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 140px;
+    width: 140px;
+    padding: 10px;
+    flex: none;
+    background-color: #fff;
+}
+.cart-img-box img{
+    width: 100%;
+    object-fit: scale-down;
+    height: 100%;
+}

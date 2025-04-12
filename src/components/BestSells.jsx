@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./BestSells.css";
 import ProductCard from "./ProductCard";
@@ -8,16 +8,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const BestSells = () => {
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    arrows: true,
-    autoplay: true,
-    margin: 10,
-  };
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const res = await fetch("https://fakestoreapi.com/products");
+      const data = await res.json();
+      setProducts(data);
+    };
+    fetchProducts();
+  }, []);
+
   return (
     <>
       <div className="container-fluid">
@@ -39,7 +40,7 @@ const BestSells = () => {
         </div>
 
         <div className="row">
-          <div className="col-3">
+          <div className="col-lg-3">
             <div className="best-sell-banner mt-2">
               <div className="best-sell-content">
                 <h4>Bring nature into your home</h4>
@@ -47,21 +48,11 @@ const BestSells = () => {
               </div>
             </div>
           </div>
-          <div className="col-9">
-            <Slider {...settings} className="bestSells-Slider">
-              <div className="col-3 px-2">
-                <ProductCard />
-              </div>
-              <div className="col-3 px-2">
-                <ProductCard />
-              </div>
-              <div className="col-3 px-2">
-                <ProductCard />
-              </div>
-              <div className="col-3 px-2">
-                <ProductCard />
-              </div>
-            </Slider>
+
+          <div className="col-lg-9">
+            <div className="row">
+              <ProductCard item={products} slice={[0, 4]} />
+            </div>
           </div>
         </div>
       </div>

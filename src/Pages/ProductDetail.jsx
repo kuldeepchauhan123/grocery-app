@@ -28,7 +28,7 @@ import { IoIosHeartEmpty } from "react-icons/io";
 const ProductDetail = () => {
   const [zoomImg, setZoomImg] = useState(mainproduct1);
   const [counter, setCounter] = useState(1);
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(0);   
 
   const sliderRef2 = useRef();
   const sliderRef = useRef();
@@ -60,7 +60,7 @@ const ProductDetail = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,    
+    autoplay: true,
   };
 
   const images = [
@@ -81,14 +81,14 @@ const ProductDetail = () => {
     sliderRef2.current.slickGoTo(index);
   };
 
-  const increment = () => {
+  const handleIncrement = () => {
     if (counter !== 10) {
-      setCounter(counter + 1);
+      setCounter(counter + 1)
     }
   };
-  const decrement = () => {
+  const handleDecrement = () => {
     if (counter !== 1) {
-      setCounter(counter - 1);
+      setCounter(counter - 1)
     }
   };
   return (
@@ -173,11 +173,11 @@ const ProductDetail = () => {
                   </div>
                   <div className="btn-wrapper mt-5">
                     <div className="quantity">
-                      <button onClick={decrement}>
+                      <button onClick={handleDecrement}>
                         <MdOutlineKeyboardArrowDown />
                       </button>
                       <input type="text" value={counter} />
-                      <button onClick={increment}>
+                      <button onClick={handleIncrement}>
                         <MdOutlineKeyboardArrowUp />
                       </button>
                     </div>
@@ -194,30 +194,32 @@ const ProductDetail = () => {
                   </div>
                   <div>
                     <table className="product-table mt-5">
-                      <tr>
-                        <td>
-                          Type: <span>Organic</span>
-                        </td>
-                        <td>
-                          SKU: <span>FWM15VKT</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          MFG: <span>07 March 2025</span>
-                        </td>
-                        <td>
-                          Tags: <span>Snack, Organic, Brown</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Life: <span>60 Days</span>
-                        </td>
-                        <td>
-                          Stock: <span>14 Items in stock</span>
-                        </td>
-                      </tr>
+                      <tbody>
+                        <tr>
+                          <td>
+                            Type: <span>Organic</span>
+                          </td>
+                          <td>
+                            SKU: <span>FWM15VKT</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            MFG: <span>07 March 2025</span>
+                          </td>
+                          <td>
+                            Tags: <span>Snack, Organic, Brown</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Life: <span>60 Days</span>
+                          </td>
+                          <td>
+                            Stock: <span>14 Items in stock</span>
+                          </td>
+                        </tr>
+                      </tbody>
                     </table>
                   </div>
                 </div>
@@ -270,26 +272,28 @@ const ProductDetail = () => {
                       goodness gnashed a jellyfish and one however because.
                     </p>
                     <table className="tab-table table mt-4">
-                      <tr>
-                        <td>Type Of Packing</td>
-                        <td>:</td>
-                        <td>Bottle</td>
-                      </tr>
-                      <tr>
-                        <td>Color</td>
-                        <td>:</td>
-                        <td>Green, Pink, Powder Blue, Purple</td>
-                      </tr>
-                      <tr>
-                        <td>Quantity Per Case</td>
-                        <td>:</td>
-                        <td>1000 ml</td>
-                      </tr>
-                      <tr>
-                        <td>Piece In One</td>
-                        <td>:</td>
-                        <td>Carton</td>
-                      </tr>
+                      <tbody>
+                        <tr>
+                          <td>Type Of Packing</td>
+                          <td>:</td>
+                          <td>Bottle</td>
+                        </tr>
+                        <tr>
+                          <td>Color</td>
+                          <td>:</td>
+                          <td>Green, Pink, Powder Blue, Purple</td>
+                        </tr>
+                        <tr>
+                          <td>Quantity Per Case</td>
+                          <td>:</td>
+                          <td>1000 ml</td>
+                        </tr>
+                        <tr>
+                          <td>Piece In One</td>
+                          <td>:</td>
+                          <td>Carton</td>
+                        </tr>
+                      </tbody>
                     </table>
                     <hr />
                     <p>
@@ -332,61 +336,61 @@ const ProductDetail = () => {
 
                 {activeTab === 1 && (
                   <div className="tab-content-inner">
-                    <table class="tab-table">
+                    <table className="tab-table">
                       <tbody>
-                        <tr class="stand-up">
+                        <tr>
                           <th>Stand Up</th>
                           <td>35″L x 24″W x 37-45″H(front to back wheel)</td>
                         </tr>
-                        <tr class="folded-wo-wheels">
+                        <tr>
                           <th>Folded (w/o wheels)</th>
                           <td>32.5″L x 18.5″W x 16.5″H</td>
                         </tr>
-                        <tr class="folded-w-wheels">
+                        <tr>
                           <th>Folded (w/ wheels)</th>
                           <td>32.5″L x 24″W x 18.5″H</td>
                         </tr>
-                        <tr class="door-pass-through">
+                        <tr>
                           <th>Door Pass Through</th>
                           <td>24</td>
                         </tr>
-                        <tr class="frame">
+                        <tr>
                           <th>Frame</th>
                           <td>Aluminum</td>
                         </tr>
-                        <tr class="weight-wo-wheels">
+                        <tr>
                           <th>Weight (w/o wheels)</th>
                           <td>20 LBS</td>
                         </tr>
-                        <tr class="weight-capacity">
+                        <tr>
                           <th>Weight Capacity</th>
                           <td>60 LBS</td>
                         </tr>
-                        <tr class="width">
+                        <tr>
                           <th>Width</th>
                           <td>24″</td>
                         </tr>
-                        <tr class="handle-height-ground-to-handle">
+                        <tr>
                           <th>Handle height (ground to handle)</th>
                           <td>37-45″</td>
                         </tr>
-                        <tr class="wheels">
+                        <tr>
                           <th>Wheels</th>
                           <td>12″ air / wide track slick tread</td>
                         </tr>
-                        <tr class="seat-back-height">
+                        <tr>
                           <th>Seat back height</th>
                           <td>21.5″</td>
                         </tr>
-                        <tr class="head-room-inside-canopy">
+                        <tr>
                           <th>Head room (inside canopy)</th>
                           <td>25″</td>
                         </tr>
-                        <tr class="pa_color">
+                        <tr>
                           <th>Color</th>
                           <td>Black, Blue, Red, White</td>
                         </tr>
-                        <tr class="pa_size">
+                        <tr>
                           <th>Size</th>
                           <td>M, S</td>
                         </tr>

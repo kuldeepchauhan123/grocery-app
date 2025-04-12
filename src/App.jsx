@@ -8,7 +8,8 @@ import Error from './Pages/Error'
 import Navbar from './components/Navbar'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import ProductDetail from "./Pages/ProductDetail";
+import ProductDetail from "./Pages/ProductDetail"
+import Cart from "./Pages/Cart"
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/home"  element={<Home/>}/>
           <Route path="/shop"  element={<Shop/>}/>
           <Route path="/productdetail"  element={<ProductDetail/>}/>
+          <Route path="/cart"  element={<Cart/>}/>
           <Route path="*"  element={<Error/>}/>
         </Routes>
         <Footer/>

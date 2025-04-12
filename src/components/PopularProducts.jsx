@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./PopularProducts.css";
 import ProductCard from "./ProductCard";
 
 const PopularProducts = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const res = await fetch("https://fakestoreapi.com/products");
+      const data = await res.json();
+      setProducts(data);
+    };
+    fetchProducts();
+  }, []);
+
   return (
     <>
       <div className="container-fluid">
@@ -36,39 +47,14 @@ const PopularProducts = () => {
           </div>
         </div>
 
-        <div className="row">
-          <div className="col-lg-1-5">
-            <ProductCard />
-          </div>
-          <div className="col-lg-1-5">
-            <ProductCard />
-          </div>
-          <div className="col-lg-1-5">
-            <ProductCard />
-          </div>
-          <div className="col-lg-1-5">
-            <ProductCard />
-          </div>
-          <div className="col-lg-1-5">
-            <ProductCard />
-          </div>
-          <div className="col-lg-1-5">
-            <ProductCard />
-          </div>
-          <div className="col-lg-1-5">
-            <ProductCard />
-          </div>
-          <div className="col-lg-1-5">
-            <ProductCard />
-          </div>
-          <div className="col-lg-1-5">
-            <ProductCard />
-          </div>
-          <div className="col-lg-1-5">
-            <ProductCard />
+        
+          <div className="row">
+            
+              <ProductCard item={products} slice={[0, 8]} />
+            
           </div>
         </div>
-      </div>
+      
     </>
   );
 };

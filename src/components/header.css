@@ -90,3 +90,14 @@ header{
 .dropdown-list:hover svg{
     opacity: 1;
 }
+.item-badge {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    background-color: var(--primary-color);
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50%;
+    color: #fff;    
+    text-align: center !important;
+}
