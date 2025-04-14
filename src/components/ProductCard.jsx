@@ -18,7 +18,7 @@ import StarRating from "./StarRating";
 import { useDispatch } from "react-redux";
 import { addCart } from "../store/Cartslice";
 
-const ProductCard = ({ item = [], slice = [] }) => {
+const ProductCard = ({ items = [], slice = [] }) => {
   
   const dispatch = useDispatch();
 
@@ -28,9 +28,9 @@ const ProductCard = ({ item = [], slice = [] }) => {
 
   return (
     <>
-      {item.slice(slice[0], slice[1]).map((item, index) => (
-        <div className="col-lg-3 col-md-4 col-sm-6 col-12">
-          <div className="proCardWrapper" key={index}>
+      {items.slice(slice[0], slice[1]).map((item, index) => (
+        <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={index}>
+          <div className="proCardWrapper">
             <div className="proImgAction">
               <div className="proImg">
                 <Link to="/">

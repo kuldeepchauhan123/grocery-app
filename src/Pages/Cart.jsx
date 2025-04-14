@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineHome } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -8,31 +8,13 @@ import "./cart.css";
 
 import StarRating from "../components/StarRating";
 import { useSelector, useDispatch } from "react-redux";
-import { removeCart, clearCart } from "../store/Cartslice";
+import { removeCart, increaseCart, decreaseCart } from "../store/Cartslice";
 import emptyCart from "../images/empty-cart.jpg";
 
 const Cart = () => {
-  const [counter, setCounter] = useState(1);
-
-  const cartData = useSelector((state) => state.cart);
+  const items  = useSelector((state) => state.Allcart.items);
   const dispatch = useDispatch();
-  {
-    console.log(cartData);
-  }
 
-  const handleRemoveCart = (id) => {
-    dispatch(removeCart(id));
-  };
-  const handleIncrement = () => {
-    if (counter !== 10) {
-      setCounter(counter + 1);
-    }
-  };
-  const handleDecrement = () => {
-    if (counter !== 1) {
-      setCounter(counter - 1);
-    }
-  };
   return (
     <>
       <div className="container-fluid border-bottom pt-3 ">
@@ -57,15 +39,17 @@ const Cart = () => {
         </div>
       </div>
 
-      {cartData.length <= 0 && (
+      
+
+      {items.length <= 0 && (
         <div className="text-center">
           <img src={emptyCart} width={300} />
           <h5>Your shopping cart is empty !</h5>
-          <button className="smallBtn mx-auto my-4 p-3" ><Link to="/"> Continue Shopping </Link></button>
+          <button className="smallBtn mx-auto my-4 p-3" ><Link to="/home"> Continue Shopping </Link></button>
         </div>
       )}
 
-      {cartData.length >= 1 && (
+      {items.length >= 1 && (
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-8 my-4">
@@ -75,7 +59,7 @@ const Cart = () => {
                     <h3 className="fw-semibold mb-0">Cart</h3>
                     <small className="fw-semibold opacity-75">
                       There are{" "}
-                      <span className="text-success"> {cartData.length} </span>
+                      <span className="text-success"> {items.length} </span>
                       items in your cart
                     </small>
                   </div>
@@ -102,7 +86,7 @@ const Cart = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {cartData.map((item, index) => (
+                      {items.map((item, index) => (
                         <tr key={index}>
                           <td>
                             <input
@@ -124,21 +108,21 @@ const Cart = () => {
                           </td>
                           <td>
                             <div className="quantity">
-                              <button onClick={handleDecrement}>
+                              <button onClick={()=> dispatch(decreaseCart(item.id))}>
                                 <MdOutlineKeyboardArrowDown />
                               </button>
-                              <input type="text" value={counter} />
-                              <button onClick={handleIncrement}>
+                              <input type="text" value={item.cartQuantity} />
+                              <button onClick={()=> dispatch(increaseCart(item.id))}>
                                 <MdOutlineKeyboardArrowUp />
                               </button>
                             </div>
                           </td>
                           <td className="text-center opacity-75">
-                            <h5 className="fw-semibold">${item.price}</h5>
+                            <h5 className="fw-semibold">${(item.price * item.cartQuantity).toFixed(2)}</h5>
                           </td>
                           <td
                             className="text-center opacity-25"
-                            onClick={() => handleRemoveCart(item.id)}
+                            onClick={() =>dispatch(removeCart(item.id))}
                           >
                             <RiDeleteBin6Line size={24} />
                           </td>

@@ -16,7 +16,7 @@ import { IoMdArrowDropup } from "react-icons/io";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const items = useSelector((state) => state.cart);
+  const cartItems = useSelector((state) => state.Allcart.items);
   const [isOpenDropdown, setisOpenDropdown] = useState(false);
 
   let toggleDropdown = () => {
@@ -89,8 +89,8 @@ const Header = () => {
                   <span className="position-relative">
                     <CiShoppingCart />
                     Cart{" "}
-                    {items.length >= 1 && (
-                      <small className="item-badge">{items.length}</small>
+                    {cartItems.length >= 1 && (
+                      <small className="item-badge">{cartItems.length}</small>
                     )}
                   </span>
                 </Link>

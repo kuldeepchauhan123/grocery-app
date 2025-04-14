@@ -53,7 +53,7 @@ const Shop = () => {
             </div>
             <div className="col-lg-4-5">
               <div className="row">
-                <ProductCard item={products} slice={[0, 12]} />
+                <ProductCard items={products} slice={[0, 12]} />
               </div>
             </div>
           </div>

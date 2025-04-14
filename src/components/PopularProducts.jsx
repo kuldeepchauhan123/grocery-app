@@ -50,7 +50,7 @@ const PopularProducts = () => {
         
           <div className="row">
             
-              <ProductCard item={products} slice={[0, 8]} />
+              <ProductCard items={products} slice={[0, 8]} />
             
           </div>
         </div>
