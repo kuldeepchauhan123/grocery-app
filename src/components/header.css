@@ -38,7 +38,7 @@ header{
 }
 .iconlist-wrapper{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 15px;
     margin-bottom: 0px;
     padding-left: 0px;

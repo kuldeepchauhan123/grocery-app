@@ -49,16 +49,18 @@ export const Cartslice = createSlice({
           item.cartQuantity -= 1;
           state.totalQuantity -= 1;
           state.totalPrice -= item.price;
-        } else {
-          // If only 1 left, remove the item
-          state.totalQuantity -= 1;
-          state.totalPrice -= item.price;
-        }
+        } 
       }
+    },
+
+    clearCart: (state) => {
+      state.items = [];
+      state.totalQuantity = 0;
+      state.totalPrice = 0;
     },
   },
 });
 
-export const { addCart, removeCart, increaseCart, decreaseCart } = Cartslice.actions;
+export const { addCart, removeCart, increaseCart, decreaseCart, clearCart } = Cartslice.actions;
 
 export default Cartslice.reducer;

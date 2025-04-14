@@ -8,11 +8,12 @@ import "./cart.css";
 
 import StarRating from "../components/StarRating";
 import { useSelector, useDispatch } from "react-redux";
-import { removeCart, increaseCart, decreaseCart } from "../store/Cartslice";
+import { removeCart, increaseCart, decreaseCart, clearCart } from "../store/Cartslice";
 import emptyCart from "../images/empty-cart.jpg";
 
 const Cart = () => {
-  const items  = useSelector((state) => state.Allcart.items);
+  const items = useSelector((state) => state.Allcart.items);
+  const cart = useSelector((state) => state.Allcart);
   const dispatch = useDispatch();
 
   return (
@@ -39,13 +40,13 @@ const Cart = () => {
         </div>
       </div>
 
-      
-
       {items.length <= 0 && (
         <div className="text-center">
           <img src={emptyCart} width={300} />
           <h5>Your shopping cart is empty !</h5>
-          <button className="smallBtn mx-auto my-4 p-3" ><Link to="/home"> Continue Shopping </Link></button>
+          <button className="smallBtn mx-auto my-4 p-3">
+            <Link to="/home"> Continue Shopping </Link>
+          </button>
         </div>
       )}
 
@@ -108,21 +109,27 @@ const Cart = () => {
                           </td>
                           <td>
                             <div className="quantity">
-                              <button onClick={()=> dispatch(decreaseCart(item.id))}>
+                              <button
+                                onClick={() => dispatch(decreaseCart(item.id))}
+                              >
                                 <MdOutlineKeyboardArrowDown />
                               </button>
                               <input type="text" value={item.cartQuantity} />
-                              <button onClick={()=> dispatch(increaseCart(item.id))}>
+                              <button
+                                onClick={() => dispatch(increaseCart(item.id))}
+                              >
                                 <MdOutlineKeyboardArrowUp />
                               </button>
                             </div>
                           </td>
                           <td className="text-center opacity-75">
-                            <h5 className="fw-semibold">${(item.price * item.cartQuantity).toFixed(2)}</h5>
+                            <h5 className="fw-semibold">
+                              ${(item.price * item.cartQuantity).toFixed(2)}
+                            </h5>
                           </td>
                           <td
                             className="text-center opacity-25"
-                            onClick={() =>dispatch(removeCart(item.id))}
+                            onClick={() => dispatch(removeCart(item.id))}
                           >
                             <RiDeleteBin6Line size={24} />
                           </td>
@@ -133,7 +140,28 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 offset-lg-1"></div>
+            <div className="col-lg-3 offset-lg-1 my-4">
+              <div className="cart-price-wrapper">
+                <div className="subTotal">
+                  <h5 className="mb-0">Subtotal</h5> <span className="subTotalPrice">${(cart.totalPrice).toFixed(2)}</span>
+                </div>
+                <div className="shippingFees">
+                  <div>
+                    <h5 className="mb-2">Shipping fees</h5>
+                    <span className="shippingAddress">Delivery to: 12A DLF Gurugram, Haryana</span>
+                  </div>
+                  <span className="subTotalPrice">$ 2.99</span>
+                </div>                
+                <div className="total">
+                  <h5>Total</h5> <span className="totalPrice">${(cart.totalPrice).toFixed(2)}</span>
+                </div>
+                <div>
+                  <button className="smallBtn w-100 justify-content-center p-3">
+                    <Link>Proceed to Checkout</Link>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}

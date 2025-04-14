@@ -51,7 +51,7 @@ const BestSells = () => {
 
           <div className="col-lg-9">
             <div className="row">
-              <ProductCard item={products} slice={[0, 4]} />
+              <ProductCard items={products} slice={[0, 4]} />
             </div>
           </div>
         </div>
