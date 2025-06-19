@@ -26,6 +26,10 @@ const ProductCard = ({ items = [], slice = [] }) => {
     dispatch(addCart(item));
   }
 
+  {
+    console.log(items)
+  }
+
   return (
     <>
       {items.slice(slice[0], slice[1]).map((item, index) => (
@@ -34,8 +38,8 @@ const ProductCard = ({ items = [], slice = [] }) => {
             <div className="proImgAction">
               <div className="proImg">
                 <Link to="/">
-                  <img className="defaultImg" src={item.image} />
-                  <img className="hoverImg" src={item.image} />
+                  <img className="defaultImg" src={item.images[0]} />
+                  <img className="hoverImg" src={item.images[0]} />
                 </Link>
               </div>
               <div className="proAction">
@@ -90,7 +94,7 @@ const ProductCard = ({ items = [], slice = [] }) => {
                 <Link to="/">{item.title}</Link>
               </div>
               <small className="proRating">
-                <StarRating star={item.rating.rate} />
+                <StarRating star={item.rating} />
               </small>
               <small className="proCompany">
                 By <span className="text-success fw-semibold">NestFood</span>
@@ -99,7 +103,7 @@ const ProductCard = ({ items = [], slice = [] }) => {
                 <div>
                   <span className="proNewPrice">$ {item.price}</span>
                   <span className="proOldPrice">
-                    $ {(item.price + 12).toFixed(2)}
+                    $ {item.discountPercentage}
                   </span>
                 </div>
                 <div>
